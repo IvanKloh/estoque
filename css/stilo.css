@@ -1,0 +1,801 @@
+/* Descricao: buscando dados no banco
+Autor: Ivan Kloh
+Data: 29/10/2020 até 30/12/2020
+*/
+
+    body{
+    	background-color:#F6F6F6;/* cor cinza fraco*/
+    }
+    .posicao{
+    	position: fixed;/* posicao fixa */
+        background-color: #F6F6F6;/* cor cinza fraco*/
+       z-index: 10;/* numero de camadas q a div fica por cima */
+        height: 240px;/*altura */
+        width: 100%;/*largura */
+        top: -12px;/*distancia da margem superior */
+    }
+    .menu{
+		margin-left: 230px;/* margem a esquerda*/
+     	margin-top: 50px;/* margem superior*/
+     	width: 1000px;/* largura*/
+     	background-color:#F6F6F6;/*cor cinza claro */
+        height: 0;
+
+	}
+	#inicio{
+		background-color: #0abab5; /*cor verde tifani */
+        left: 392px;/* margem a esquerda*/
+        position: relative;/* posicao relativa*/
+        width: 163px;/*largura */
+        height: 43px;/*altura */
+        border-radius: 7px;/*arredonda os cantos */
+        /* margin-bottom: 20px; */
+        cursor: pointer;/*mao do mouse */
+        font-size: 35px;/* tamanho da fonte*/
+        bottom: 120px;/*borda inferior */
+
+			
+	}
+	#inicio a{
+
+		text-decoration: none;/* texto sem decoração*/
+		font-size: 35px;/* tamanho da fonte */
+		color:white;/*cor cinza claro */
+		padding: 9px 34px;/*preenchimento */
+		text-align: center;/*texto alinhado no centro */
+		font-family: Arial;/* tipo de fonte*/
+		
+	}
+	#inicio a:hover{
+		background-color: #A9A9A9;/*cor cinza */
+		color: black;/*cor preta */
+		border-radius: 7px;/*arredonda os cantos */
+		font-size: 35px;/*tamanho da fonte*/
+		text-decoration: none;/*decoracao do texto*/
+		padding: 9px 34px;/*preenchimento */
+	}
+    .menuEpi{
+    	background-color: #0abab5;/* cor verde tifani*/
+        right: 134px;/* margem a direita*/
+        position: relative;/* posicao*/
+        width: 163px;/* largura*/
+        height: 19px;/* altura*/
+        border-radius: 7px;/*arredonda os cantos */
+        /* margin-bottom: 20px; */
+        cursor: pointer;/*mao do mouse */
+        padding: 8px 15px;/* preenchimento */
+        color: black;/* cor preta*/
+        text-align: center;/* texto alinhado no centro*/
+        font-size: 18px;/* tamanho da fonte*/
+        bottom: 86px;/* margim inferior*/
+    }
+    .menuEpi a{
+    	width: 213px;/* largura*/
+    	text-decoration: none;/* texto sem decoração*/
+    	font-size: 18px;/* tamanho da fonte */
+    	color:#f2f2f2;/*cor cinza claro */
+    	padding: 8px 4px;/*preenchimento */
+    	text-align: center;/*texto alinhado no centro */
+    	font-family: Arial;/* tipo de fonte*/
+    	text-align: center;/* texto alinhado no centro*/
+    	bottom: 220px;/*margim inferior */
+    }
+    .menuEpi a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+   		border-radius: 7px;/*arredonda os cantos */
+   		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		width: 155px;/* largura*/
+   		text-align: center;/*texto alihado no centro */
+    }
+
+    .menuFuncionario {
+        background-color: #0abab5;/*cor verde tifani */
+        position: relative;/*posicao */
+        width: 163px;/*largura */
+        height: 19px;/*altura */
+        border-radius: 7px;/*arredonda os cantos */
+        cursor: pointer;/* mao do mause*/
+        padding: 8px 4px;/*preenchimento */
+        left: 106px;/* margem a esquerda*/
+        text-align: center;/* texto alinhado no centro*/
+        bottom: 120px;/*margem inferior */
+     }
+    .menuFuncionario a{
+   		text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+  		text-align: center;/*texto alinhado no centro */
+  		font-family: Arial;/* tipo de fonte*/
+   		text-align: center;/* texto alinhado no centro*/
+    }
+    .menuFuncionario a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+   		border-radius: 7px;/*arredonda os cantos */
+   		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+    }
+    .menuMovimentacao{
+        background-color: #0abab5;/*cor verde tifani */
+        position: relative;/* posicao*/
+        width: 163px; /* largura*/
+        height: 19px; /* altura*/
+        border-radius: 7px;/*arredonda os cantos */
+        cursor: pointer;/* mao do mause*/
+        padding: 8px 20px;/* preenchimento*/
+        left: 330px;/* margem a esquerda*/
+        bottom: 156px;/* mrgem inferior*/
+        text-align: center;/*texto centralizado */
+    }
+    .menuMovimentacao a{
+    	text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+   		font-family: Arial;/* tipo de fonte */
+   		text-align: center;/*texto centralizado */
+    }
+    .menuMovimentacao a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+  		border-radius: 7px;/*arredonda os cantos */
+   		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto centralizado */
+    }
+    .menuUsuario{
+   	    background-color: #0abab5;/*verde tifani */
+        position: relative;/* posicao*/
+        width: 163px;/*largura */
+        height: 19px;/* altura*/
+        border-radius: 7px;/* arredonda os cantos*/
+        cursor: pointer;/*mao do mause */
+        padding: 8px 3px;/* preenchimento*/
+        left: 593px;/* margem a esquerda*/
+        text-align: center;/*texto centralizado */
+        bottom: 191px;/*margem inferior */
+    }
+    .menuUsuario a{
+   		text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+   		font-family: Arial;/*tipo de fonte */
+   		text-align: center;/* texto centralizado*/
+    }
+    .menuUsuario a:hover{
+    	background-color: #A9A9A9;/*cor cinza */
+    	color: black;/*cor preta */
+    	border-radius: 7px;/*arredonda os cantos */
+    	font-size: 18px;/*tamanho da fonte*/
+    	padding: 8px 4px;/*preenchimento */
+    	text-align: center;	/* texto centralizado*/
+    }
+    .menuSair{
+        background-color: #0abab5;/* cor verde tifani*/
+        position: relative;/* posicao*/
+        width: 163px;/*largura */
+        height: 19px;/* altura*/
+        border-radius: 7px;/*arredonda os cantos */
+        cursor: pointer;/* mao do mause*/
+        padding: 8px 20px;/* preenchimento*/
+        left: 810px;/* margem a esquerda*/
+        text-align: center;/* texto centralizado*/
+        bottom: 227px;/* margem inferior*/
+    }
+
+    .menuSair a{
+    	text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+   		font-family: Arial;/*tipo de fonte */
+   		text-align: center;/* texto centralizado */
+   		
+    }
+    .menuSair a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+   		border-radius: 7px;/*arredonda os cantos */
+   		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/* texto centralizado*/
+   	
+    }
+    .subMenuLista{
+   	    background-color: #0abab5;/* cor verde tifani*/
+        right: 84px;/*margem  a direita */
+        position: relative;/* *posicao*/
+        width: 163px;/* largura*/
+        height: 19px;/*altura */
+        border-radius: 7px;/*arredonda os cantos */
+        cursor: pointer;/* mao do mouse*/
+        padding: 8px 20px;/* preenchimento*/
+        color: black;/*cor preta */
+        text-align: center;/* texto centralizado*/
+        font-size: 28px;/*tamnho da fonte */
+        bottom: 85px;/* margem inferior*/
+       
+    }
+    .subMenuLista a{
+   		text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+    	font-family: Arial;/* tipo de fonte*/
+   		text-align: center;/* texto centralizado*/
+    }
+    .subMenuLista a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+   		border-radius: 7px;/*arredonda os cantos */
+   		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		width: 155px;/* largura*/
+   		text-align: center;/*texto centralizado */
+    }
+    .subMenuCadastra{
+        background-color: #0abab5; /*cor verde tifani */
+        left: 195px;/* margem a esquerda*/
+        position: relative;/*posicao */
+        width: 163px;/* largura*/
+        height: 19px;/*altura */
+        border-radius: 7px;/*arredonda os cantos */
+        cursor: pointer;/* mao do mause*/
+        padding: 8px 20px;/* preenchimento*/
+        color: black;/*cor preta */
+        text-align: center;/*texto centralizado */
+        font-size: 18px;/*tamanho da fonte */
+        bottom: 120px;/*margem inferior */
+    }
+    .subMenuCadastra a{
+   		text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+   		font-family: Arial;/* tipo de fonte*/
+   		text-align: center;/* texto centralizado*/
+    }
+    .subMenuCadastra a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+   		border-radius: 7px;/*arredonda os cantos */
+   		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		width: 155px;/* largura*/
+   		text-align: center;/* texto centralizado*/
+    }
+    .subMenuBusca{
+   	    background-color: #0abab5;/* cor verde tifani*/
+        left: 474px;/*margem a esquerda */
+        position: relative;/*posicao */
+        width: 163px;/* largura*/
+        height: 19px;/* altura*/
+        border-radius: 7px;/* arredonda os cantos*/
+        cursor: pointer;/* mao do mause*/
+        padding: 8px 20px;/* preenchimento*/
+        color: black;/* cor preta*/
+        text-align: center;/* texto centralizado*/
+        font-size: 18px;/* tamnho da fonte*/
+        bottom: 156px;/*margem inferior */
+    }
+    .subMenuBusca a{
+   		text-decoration: none;/* texto sem decoração*/
+   		font-size: 18px;/* tamanho da fonte */
+   		color:#f2f2f2;/*cor cinza claro */
+   		padding: 8px 4px;/*preenchimento */
+   		text-align: center;/*texto alinhado no centro */
+   		font-family: Arial;/*tipo de fonte */
+   		text-align: center;/* texto centralizado*/
+    }
+    .subMenuBusca a:hover{
+   		background-color: #A9A9A9;/*cor cinza */
+   		color: black;/*cor preta */
+   		border-radius: 7px;/*arredonda os cantos */
+  		font-size: 18px;/*tamanho da fonte*/
+   		padding: 8px 4px;/*preenchimento */
+   		width: 155px;/*largura */
+   		text-align: center;/*texto centralizado */
+    }
+    .subMenuSair{
+     	background-color: #0abab5;/* cor verde tifani*/
+        left: 739px;/*margim a esquerda */
+        position: relative;/*posicao */
+        width: 163px;/*largura */
+        height: 19px;/*altura */
+        border-radius: 7px;/*arredonda os cantos */
+        cursor: pointer;/*mao do mause */
+        padding: 8px 20px;/* preenchimneto*/
+        color: black;/* cor preta*/
+        text-align: center;/*texto centralizado */
+        font-size: 18px;/* tamanho da fonte*/
+        bottom: 191px;/*margem inferior */
+
+    }
+    .SubMenuSair a{
+    	text-decoration: none;/* texto sem decoração*/
+        font-size: 18px;/* tamanho da fonte */
+    	color:#f2f2f2;/*cor cinza claro */
+    	padding: 8px 4px;/*preenchimento */
+    	text-align: center;/*texto alinhado no centro */
+    	font-family: Arial;/*tipo de fonte */
+    	text-align: center;/*texto centralizado */
+    }
+    .SubMenuSair a:hover{
+    	background-color: #A9A9A9;/*cor cinza */
+    	color: black;/*cor preta */
+    	border-radius: 7px;/*arredonda os cantos */
+    	font-size: 18px;/*tamanho da fonte*/
+    	padding: 8px 4px;/*preenchimento */
+    	width: 155px;/*largura */
+    	text-align: center;/* texto centralizado*/
+    	
+    }
+    #myTable {
+        margin-top: 15px;/* margem superior*/
+        text-align: center;/* texto centralizado*/
+        overflow:hidden;/* */
+        font-family: Arial;/*fonte da letra */
+        width: 100%;/*largura */
+        -webkit-border-radius: 25px;/*arredonda os cantos */
+        -moz-border-radius: 25px;/* arredonda os cantos*/
+        border-radius: 35px;/* arredonda os cantos*/
+        border:solid 2px black;/*borda preta */
+    	border-collapse: collapse;/*define as celulas dentro da tabela */
+    	font-size: 14px;/*tamanho da fonte*/
+    	top: 54px;/* margem superior*/
+        right: 143px;/* margem a direita*/
+    }
+    #myTable_wrapper{
+	    top: 122px;/* margem duperior*/
+    }
+    th.sorting{
+	   width: 50px !important;/* largura*/
+    }
+
+    th.sorting_asc{
+	   width: 50px !important;/* largura*/
+    }
+	th{ 
+	 	border:solid 2px black;/*borda preta */
+	 	font-family: Arial;/*tipo de fonte */
+		background-color:#000000;/* cor preta */
+		color: white;/*cor barnca */
+		text-align: center;/*texto alinhado no centro */
+		font-size: 16px;/*tamanho da fonte*/
+		
+	}
+	table td {
+		border:2px solid #000000;/*cor cinza claro */
+		text-align: center;/*texto alinhado a esquerda */
+		min-width: 70px;/*largura */
+		font-family: Arial;/*tipo de fonte */
+	}
+
+	table{
+	    margin-top: 15px;/* margem superior*/
+        text-align: center;/* texto centralizado*/
+        overflow:hidden;/* */
+        font-family: Arial;/*fonte da letra */
+        width: 100%;/*largura */
+        -webkit-border-radius: 25px;/*arredonda os cantos */
+        -moz-border-radius: 25px;/* arredonda os cantos*/
+        border-radius: 35px;/* arredonda os cantos*/
+        border:solid 2px black;/*borda preta */
+        border-collapse: collapse;/*define as celulas dentro da tabela */
+        font-size: 14px;/*tamanho da fonte*/
+        top: 54px;/* margem superior*/
+        right: 143px;/* margem a direita*/
+	}
+
+	th,td{
+    	padding: 15px;/*preenchimento */
+	    border: solid 2px white;/*borda branca */
+	    font-family: Arial;/*fonte da letra */
+	}
+
+	tr:nth-child(odd) {
+		border:solid 2px black;/*borda preta */
+   		background-color:#d3d3d3;/*cor cinza */
+   		font-family: Arial;/*tipo de fonte */
+  	}  
+  	tr:nth-child(even) {
+  		border:0px;/*sem borda */
+    	background-color:white;/*cor branca */
+    	font-family: Arial;/*tipo de fonte */
+   	} 
+   	tr:hover{
+        background-color: #A9A9A9;/*cor azul*/
+        cursor: pointer;/*mao do mause */
+        font-family: Arial;/*tipo de fonte */
+    }
+    .container{
+        right: 25px;/*margem a direita */
+        top: 250px;/*margim superior */
+        width: 1323px;/* largura*/
+        background: #f7f7ff2b;/*cinza claro */
+        position: relative;/* posicao */
+       
+    } 
+    #banner{
+     	background: url(../css/imagem/sape1.png);/* endereço da imagem na maquina*/
+        height: 230px;/*altura */
+        margin-left: 400px;/*margem a esquerda  */
+        position: relative;/* posicao*/
+        width: 230px;/* largura*/
+        right: 45px;/*margim a direita */
+        cursor: pointer;/*mao do mause */
+        bottom: 50px;/* margem inferior*/
+    }
+    #banner a:hover{
+        cursor: pointer;/*mao do mause */
+    }
+    #bannerRodape{
+     	background: url(../css/imagem/sape2.png);/* endereço da imagem na maquina*/
+        height: 80px;/* altura*/
+        margin-left: 79px;/* margim a esquerda*/
+        position: relative;/* posicao*/
+        width: 80px;/* largura*/
+        right: 45px;/*margem a direita */
+        display: flex;/* */
+        top: 27px;/*margem superior */
+    }
+    #tbl {
+        align-content: center;/*texto alinhado no centro */
+		left:30px;/* lado esquerdo*/
+		position: relative;/* posicao*/
+		font-family: Arial;/*fonte da letra */
+		bottom: 78px;/*margen inferior */
+	} 
+	#form{
+	    border: solid 2px black;/* bordas pretas*/
+        background-color: #f2f2f2;/* cinza claro*/
+        padding: 9px 20px;/*preenchimento */
+        width: 606px;/*largura */
+        border-radius: 7px;/* arredonda os cantos*/
+        font-family: Arial;/*tipo de fonte */
+        position: relative;/* posicao*/
+        margin-left: 352px;/*margem a esquerda */
+    }
+
+    #imprimirQuadro{
+	    border: solid 2px black;/* borda preta*/
+        background-color: #f2f2f2;/* cor cinza claro*/
+        padding: 9px 20px;/*preenchimento */
+        margin-left: 340px;/* margem a esquerda*/
+        width: 500px;/* largura*/
+        border-radius: 7px;/* arredonda os cantos*/
+        font-family: Arial;/* tipo de fonte*/
+	}
+    #imprimirQuadro input[type=text], input[type=date],input[type="password"],select[type="text"]{
+    	width:100%;/* largura*/
+    	padding: 12px 20px;/*preenchimento */
+    	margin: 8px 0;/*margem */
+    	display: inline-block;/* */
+    	border:solid 1px black;/*borda preta */
+    	border-radius: 7px;/*arredonda os cantos */
+    	box-sizing: border-box;/* */
+    	font-family: Arial;/*fonte da letra */
+    	font-size: 30px;/* tamnho da fonte*/
+    }
+
+	#form input[type=text]:hover, input[type=date]:hover,input[type="password"]:hover,select[type="text"]:hover {
+   		background: white; /* cor branca */
+        border:2px solid #0abab5; /* bordas verde tifani*/
+       
+    }
+    #form input[type=text], input[type=date],input[type="password"],select[type="text"]{
+    	width:100%;/* largura*/
+    	padding: 12px 20px;/*preenchimento */
+    	margin: 8px 0;/*margem */
+    	display: inline-block;/* */
+    	border:solid 1px black;/*borda preta */
+    	border-radius: 7px;/*arredonda os cantos */
+    	box-sizing: border-box;/* */
+    	font-family: Arial;/*fonte da letra */
+    	font-size: 14px;/* tamanho da fonte*/
+    
+    }
+    #myTable_filter input[type=search]{
+    	font-family: Arial;/* tipo de fonte*/
+    	font-size: 14px;/* tamanho da fonte*/
+    }
+    .table-round-corner {
+    	width: 1300px;/* largura*/
+    }
+
+     #myTable input[type=text]{
+    	width:66px;/* largura*/
+    }
+
+    select {
+    	font-family: Arial;/* tipo de fonte*/
+    	font-size: 14px;/*tamanho da fonte */
+    }
+
+    button.cadastrar{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 53px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    button.limpar{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 75px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    
+    button.imprimir{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 107px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+     }
+    button#imprimir{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 78px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    button.voltar{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 48px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+	
+    button.cadastrarSaida{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: -2px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+   button.limparSaida{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 25px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    
+    button.imprimirSaida{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        font-family: Arial;/*tipo de fonte */
+    }
+    button#imprimirSaida{
+    	font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 78px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    button.voltarSaida{
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 12px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    button.voltarBusca {
+        font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 137px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+    button.voltarLista{
+     	font-size: 14px;/* tamanho da fonte*/
+        width: 125px;/* largura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        margin-left: 60px;/*margem a esquerda */
+        font-family: Arial;/*tipo de fonte */
+    }
+  
+    #imprimirQuadro label {
+      	font-family: Arial;/*fonte da letra */
+      	font-size: 14px;/*tamanho da fonte */
+
+    }
+    #form label {
+      	font-family: Arial;/*fonte da letra */
+      	font-size: 16px;
+
+    }
+    label{
+        font-size: 16px;/* tamanho da fonte*/
+    }
+    #campos input[type=text], input[type=date]{
+    	width:100%;/*largura */
+    	padding: 12px 20px;/* prenchimento*/
+    	margin: 8px 0;/*margem */
+    	display: inline-block;/* */
+    	border:solid 1px black;/*borda preta */
+    	border-radius: 7px;/* arredonda os cantos*/
+    	box-sizing: border-box;/* */
+    	font-family: Arial;/*fonte da letra */
+    	font-size: 16px;/*tamanho da fonte */
+    }
+     #campos input[type=text]:hover, input[type=date]:hover,input[type="password"]:hover,select[type="text"]:hover{
+     	border:2px solid #0abab5 !important;/* borda verde tifani*/
+     }
+
+    
+    #campos{
+        border: solid 2px black; /* borda cor preta*/
+        background-color: #f2f2f2;/*cor cinza claro */
+        padding: 9px 20px;/* preenchimento*/
+        margin-left: 137px;/*margem a esquerda */
+        border-radius: 7px;/* arredonda os cantos*/
+        font-family: Arial;/* tipo de fonte*/
+        width: 606px;/*largura */
+        position: relative;/* posicao*/
+        margin-left: 352px;/*margem a esquerda  */
+    }
+   
+ 	
+ 	#txtHint{
+	    position: relative;/*posicao */
+        width: 1323px;/*largura */
+        margin: 10px;/* margens*/
+        left:25px;/* margem a esquerda*/
+        font-family: Arial;/*fonte da letra */
+        top: 100px;/* margem superior*/
+        margin-bottom: 50px;/* margem inferior*/
+
+   	}
+
+	.quadroFinal{
+	    border-radius: 7px;/* arredonda os cantos*/
+        height: 135px;/* altura*/
+        background-color: #0abab5;/* cor verde tifani*/
+        width: 1284px;/* largura*/
+        text-align: center;/* texto alinhado no centro*/
+        margin-left: 35px;/* margem a esquerda*/
+        bottom: -384px;/* margem inferior*/
+        font-family: Arial;/* tipo de fonte*/
+        position: relative;/* posicao*/
+    }   
+
+	.quadroFinal a{
+
+	    color: white;/* cor branca*/
+	    font-size: 14px;/* tamanho da fonte*/
+	    font-family: Arial;/*fonte da letra */
+	}
+	.link_final{
+	    bottom: 57px;/* margem inferior*/
+        margin-bottom: 10px;/* margem inferior*/
+        margin-left: 418px;/* margem a esquerda*/
+        display: flex;/* */
+        position: relative;/* posicao*/
+        font-family: Arial;/*fonte da letra */
+        font-style: 18px;/* tamanho da fonte*/
+    }
+
+    .imagem{
+	    bottom: 47px;/* margem inferior*/
+        margin-bottom: 10px;/*meargem inferior */
+        margin-left: -15px;/* margem a esquerda*/
+        position: relative;/* posicao*/
+    }
+
+	.alterar{
+		text-decoration:none; /* decoracao do texto*/
+        color: black;/* cor preta*/
+	}
+    .float{
+        position: relative;/* posicao*/
+        border:solid 1px black;/*borda preta */
+    }
+
+    .float .dica {
+        visibility: hidden;/* */
+        width: 180px;/* largura*/
+        background-color: black;/* cor preta*/
+        color: #fff;/* cor branca*/
+        text-align: center;/* texto centralizado*/
+        border-radius: 6px;/* arredonda os cantos*/
+        padding: 5px 0;/* preenchimento*/
+        font-family: Arial;/*fonte da letra */
+        position: absolute;/* */
+        z-index: 1;/* */
+    }
+
+    .float:hover .dica {
+        visibility: visible;
+    }
+
+    .rodape{
+        margin-left: -230px;/*margem a esquerda */
+        font-family: Arial;/*fonte da letra */
+
+    }
+    .rodapeMenu{
+        position: relative;
+        top: 614px;/* margem superior*/
+        font-family: Arial;/*fonte da letra */
+    }
+    .retorno{
+		text-align: center;/* texto centralizado*/
+	    margin-top: 129px;/* margem superior*/
+	    font-family: Arial;/*fonte da letra */
+      	font-size: 30px;/* tamanho d fonte*/
+
+    }
+    #mostraUsuario{
+	    width: 150px;/* largura*/
+        height: 174px;/* altura*/
+        margin-left: 785px;/* margem a esquerda*/
+        position: relative;/* posicao*/
+        font-family: arial;/*tipo de fonte */
+        font-size: 16px;/*tamanho de fonte */
+        background-color: #5c6d6c;/* cinza escuro*/
+        border-radius: 11px;/*arredonda o cantos */
+        text-align: center;/*texto centralizado */
+        padding: 1px 0px;/* preenchimento*/
+        color: yellow;/* cor amarela*/
+        bottom: 409px;/* margem inferior*/
+        z-index: 1;/* */
+    }
+
+
+    .dataTables_length{
+        font-size: 14px;/* tamanho da fonte*/
+        margin-left: 188px;/* margem a esquerda*/
+        bottom: 33px;/* margem inferior*/
+        position: relative;/* posicao*/
+    }
+    .dataTables_filter{
+        font-size: 14px;/* tamanho da fonte*/
+        bottom: 10px;/*margem inferior */
+        position: relative;/*posicao */
+        right: 223px;/*margem a direita */
+    }
+
+    .dataTables_info{
+        font-size: 14px;/* tamanho da fonte*/
+        margin-left: 188px;/* margem a esquerda*/
+        top: 28px;/* margem superior*/
+        position: relative;/* posicao*/
+    }
+    .dataTables_paginate{
+        font-size: 14px;/* tamanho da fonte*/
+        right: 214px;/*margem a direita    */
+        top: 26px;/*margem superior */
+        position: relative;/* posicao*/
+    }
+
+    .dataTables_wrapper .dataTables_length {
+    	float: none;/* */
+    }
+    .fb-comments{
+        margin-left:100px;/*margem a esquerda */
+        bottom: -317px;
+    }
+
+    #form input[type=text]:focus, input[type=date]:focus ,input[type="password"]:focus,select[type="text"]:focus {
+    	outline: none !important;
+        border:2px solid #0abab5 !important;/* borda verde tifani*/
+    }
+    #campos input[type=text]:focus, input[type=date]:focus ,input[type="password"]:focus,select[type="text"]:focus {  
+    	outline: none !important;
+        border:2px solid #0abab5 !important;/*borda verde tifani */
+    }
