@@ -1,2 +1,1 @@
-# estoque
- 
+Este projeto é um sistema de estoque de produtos de EPI. Onde posso cadastrar os produtos e suas informa  no banco de dados, podendo fazer a alterações desses valore, listar e uma busca personalizada. Assim sucessivamente com os funcionários, tendo uma tabela de movimentações  onde se pode fazer um  registro de atividades completo com a opção  de exporta via PDF,EXCEL,CSV,COPIA  ou IMPRESSÃO. além de informar ao usúario quando o estoque encontra-se baixo, razoável ou bom.
